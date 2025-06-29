@@ -14,5 +14,18 @@ def count_characters(text):
 
          counter += 1
          dict[char] = counter
-    
     return dict
+
+def sort_dict(dict):
+    list_of_dicts = []
+    for char in dict:
+        new_dict = {}
+        new_dict["char"] = char
+        new_dict["num"] = dict[char]
+        list_of_dicts.append(new_dict)
+    
+    list_of_dicts.sort(reverse=True, key=sort_on)
+    return list_of_dicts
+
+def sort_on(items):
+    return items["num"]
